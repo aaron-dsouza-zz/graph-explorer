@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS characters;
+
+CREATE TABLE characters(
+id INTEGER NOT NULL,
+name TEXT NOT NULL,
+bio TEXT NOT NULL
+);
+
+DROP TABLE IF EXISTS relations;
+
+CREATE TABLE relations(
+source INTEGER NOT NULL,
+target INTEGER NOT NULL,
+type TEXT not NULL
+);
+

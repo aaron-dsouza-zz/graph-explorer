@@ -1,0 +1,30 @@
+.left {
+    text-align: center;
+    width: 50%;
+    border: thin solid #ddd;
+  }
+  
+  .right {
+    text-align: center;
+    padding: 10px;
+    width: 50%;
+    border: thin solid #ddd;
+  }
+  
+  .info {
+    display: inline-block;
+    margin-left: 12px;  
+  }
+  
+  .firstname {
+    font-size: 4rem;
+    font-weight: bold;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .lastname {
+    font-size: 2rem;
+    font-weight: lighter;
+    color: gray;
+  }
