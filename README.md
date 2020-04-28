@@ -1,4 +1,4 @@
-# Knowledge Graph Explorer
+# Graph Explorer
 This is a react application that demonstrates reading data from a GraphQL server and displaying in as a network graph.
 Through this application I aim to use the following libraries and frameworks
 
