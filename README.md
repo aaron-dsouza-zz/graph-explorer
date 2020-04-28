@@ -13,3 +13,5 @@ For the frontend
 * A network graph visualization library (yet to be decided)
 
 The data is a simple data set of the Harry Potter world, which is loaded from https://data.world/harishkgarg/harry-potter-universe
+
+I will add more links and details as I develop further
