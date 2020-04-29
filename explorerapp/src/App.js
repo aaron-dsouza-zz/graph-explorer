@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import environment from './RelayEnvironment';
-import { graphql } from 'graphql';
 import { QueryRenderer } from 'react-relay';
+import graphql from 'babel-plugin-relay/macro';
 import Character from './components/Character';
 
 const App = () => {
@@ -11,14 +11,14 @@ const App = () => {
     <QueryRenderer
       environment={environment}
       query={graphql`
-      query AppQuery {
-        characters {
-          id
-          name
-          bio
-        }  
-      }
-    `}
+        query AppQuery {
+          characters {
+            id
+            name
+            bio
+          }  
+        }
+      `}
       variables={{}}
       render={({error, props}) => {
         if (error) {
