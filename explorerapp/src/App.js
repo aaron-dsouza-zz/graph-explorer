@@ -1,21 +1,37 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import Person from './components/Person';
-import Form from './components/Form';
-
+import environment from './RelayEnvironment';
+import { graphql } from 'graphql';
+import { QueryRenderer } from 'react-relay';
+import Character from './components/Character';
 
 const App = () => {
-  const [profiles, setProfiles] = useState([]);
-  const updateProfiles = (profileData) => {
-    setProfiles(profileData);
-  }
+  
   return (
-    <div className="App">
-      <Form onSubmit={updateProfiles} />
-      <div>
-        {profiles.map(profile => <Person key={profile.id} {...profile}/>)}
-      </div>
-    </div>
+    <QueryRenderer
+      environment={environment}
+      query={graphql`
+      query AppQuery {
+        characters {
+          id
+          name
+          bio
+        }  
+      }
+    `}
+      variables={{}}
+      render={({error, props}) => {
+        if (error) {
+          return <div>Error!</div>;
+        }
+        if (!props) {
+          return <div>Loading...</div>;
+        }
+        return <div>
+            {props.characters.map(character => <Character key={character.id} {...character}/>)}
+          </div>;
+      }}
+    />
   );
 }
 
