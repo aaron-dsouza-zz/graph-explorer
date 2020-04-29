@@ -9,11 +9,16 @@ import javax.persistence.Table;
 @Data
 @Table(name = "characters")
 @Entity
-public class Character {
+public class Character implements Node {
     @Id
     private int id;
 
     private String name;
 
     private String bio;
+
+    @Override
+    public int getId() {
+        return id;
+    }
 }
