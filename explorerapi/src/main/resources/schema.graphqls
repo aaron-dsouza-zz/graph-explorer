@@ -1,9 +1,14 @@
 type Query {
-    characters: [Character!]
+    characters(first: Int, offset: Int): [Character!]
+    node(id: ID!): Node
 }
 
-type Character {
+type Character implements Node {
     id: ID
     name: String
     bio: String
+}
+
+interface Node {
+    id: ID
 }
