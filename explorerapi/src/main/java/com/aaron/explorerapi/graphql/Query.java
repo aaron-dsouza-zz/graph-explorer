@@ -19,8 +19,9 @@ public class Query implements GraphQLQueryResolver {
 
     public List<Character> getCharacters(int first, int offset) {
         System.out.println("Characters requested");
-        if(offset > 0 && first > 0)
+        if(offset > 0 && first > 0) {
             return characterRepository.findAll().stream().skip(offset).limit(first).collect(Collectors.toList());
+        }
         return characterRepository.findAll().stream().collect(Collectors.toList());
     }
 
