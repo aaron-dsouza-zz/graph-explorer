@@ -7,7 +7,7 @@ const CharacterGraph = (props) => {
 const decorateGraphNodesWithInitialPositioning = nodes => {
   return nodes.map(n =>
       Object.assign({}, n, {
-          x: n.x || Math.floor(Math.random() * 1000),
+          x: n.x || Math.floor(Math.random() * 1300),
           y: n.y || Math.floor(Math.random() * 1000),
       })
   );
@@ -21,9 +21,10 @@ const myConfig = {
       color: "lightblue",
       size: 1500,
       fontSize: 12,
+      fontColor: "white",
       highlightFontSize: 12,
       highlightStrokeColor: "blue",
-      labelProperty: "name", 
+      labelProperty: "name",
   },
   link: {
       highlightColor: "red",
