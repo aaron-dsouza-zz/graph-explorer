@@ -3,35 +3,46 @@ import { Graph } from "react-d3-graph";
 import './CharacterGraph.scss';
 
 const CharacterGraph = (props) => {
-  const data = {
-    nodes: [{ id: "Harry" }, { id: "Sally" }, { id: "Alice" }],
-    links: [
-        { source: "Harry", target: "Sally" },
-        { source: "Harry", target: "Alice" },
-    ],
+
+const decorateGraphNodesWithInitialPositioning = nodes => {
+  return nodes.map(n =>
+      Object.assign({}, n, {
+          x: n.x || Math.floor(Math.random() * 1000),
+          y: n.y || Math.floor(Math.random() * 1000),
+      })
+  );
+};
+const data = {
+    nodes: decorateGraphNodesWithInitialPositioning(props.characters),
 };
 const myConfig = {
   nodeHighlightBehavior: true,
   node: {
-      color: "lightgreen",
-      size: 1000,
+      color: "lightblue",
+      size: 1500,
+      fontSize: 12,
+      highlightFontSize: 12,
       highlightStrokeColor: "blue",
+      labelProperty: "name", 
   },
   link: {
-      highlightColor: "lightblue",
+      highlightColor: "red",
   },
   height: window.innerHeight,
   width: window.innerWidth,
+  automaticRearrangeAfterDropNode: true,
 };
-  return (
-    <div className="graph">
-      <Graph
-        id="graph-id"
-        data={data}
-        config={myConfig}
-      ></Graph>
-    </div>
-  );
+
+
+return (
+  <div className="graph">
+    <Graph
+      id="graph-id"
+      data={data}
+      config={myConfig}
+    ></Graph>
+  </div>
+);
 }
 
 export default CharacterGraph;
