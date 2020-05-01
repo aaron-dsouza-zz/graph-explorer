@@ -1,6 +1,6 @@
 import React from 'react';
 import './CharacterCards.scss';
-import Character from './Character';
+import Character from '../Character';
 
 const CharacterCards = (props) => (
     <div className="flex-container">
