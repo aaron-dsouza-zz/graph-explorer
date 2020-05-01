@@ -3,7 +3,7 @@ import './App.css';
 import environment from './RelayEnvironment';
 import { QueryRenderer } from 'react-relay';
 import graphql from 'babel-plugin-relay/macro';
-import Character from './components/Character';
+import CharacterCards from './components/CharacterCards';
 
 const App = () => {
   
@@ -27,9 +27,7 @@ const App = () => {
         if (!props) {
           return <div>Loading...</div>;
         }
-        return <div className="flex-container">
-            {props.characters.map(character => <Character key={character.id} {...character}/>)}
-          </div>;
+        return <CharacterCards characters={props.characters} />
       }}
     />
   );

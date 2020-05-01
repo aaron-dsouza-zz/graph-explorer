@@ -9,10 +9,6 @@ const Character = (props) => (
             <p>{props.bio}</p>
         </div>
     </div>
-    // <div className="info">
-    //     <div className="name">{props.name}</div>
-    //     <div className="bio">{props.bio}</div>
-    // </div>
 );
 
 export default Character;
