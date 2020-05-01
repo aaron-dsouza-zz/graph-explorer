@@ -41,3 +41,8 @@
   display: inline-block;
   margin-left: 12px;  
 }
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}

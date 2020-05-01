@@ -27,7 +27,7 @@ const App = () => {
         if (!props) {
           return <div>Loading...</div>;
         }
-        return <div>
+        return <div className="flex-container">
             {props.characters.map(character => <Character key={character.id} {...character}/>)}
           </div>;
       }}
